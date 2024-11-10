@@ -3,4 +3,6 @@ project(proyect)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(proyect main.cpp)
+add_executable(proyect main.cpp
+        modules/CTable.cpp
+        modules/CTable.h)

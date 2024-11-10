@@ -1,15 +1,10 @@
 #include <iostream>
 #include <vector>
 
+#include "modules/CTable.h"
+
 using namespace std;
 
-class Ctablero {
-    vector<vector<char>> tablas;
-    int size;
-public:
-
-
-};
 
 
 int main() {
