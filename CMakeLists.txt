@@ -7,4 +7,6 @@ add_executable(proyect main.cpp
         modules/CTable.cpp
         modules/CTable.h
         modules/util.cpp
-        modules/util.h)
+        modules/util.h
+        modules/control-game.cpp
+        modules/control-game.h)

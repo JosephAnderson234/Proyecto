@@ -1,12 +1,10 @@
-//
-// Created by cosea on 15/11/2024.
-//
-
 #ifndef UTIL_H
 #define UTIL_H
 
-bool validPosition(int x, int y);
+#include "CTable.h"
 
-bool validDificult(int levelInput);
+bool validarPosicion(int& x, int& y, Ctablero& table);
+
+bool validarDificultad(int levelInput);
 
 #endif //UTIL_H
