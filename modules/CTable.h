@@ -11,7 +11,9 @@ class Ctablero {
     int mSize;
 public:
     Ctablero(int size);
+
     void buscarbandera(int x, int y);
+    bool validarPosicion(int x, int y);
 };
 
 
