@@ -3,9 +3,7 @@
 //
 
 #include "util.h"
-#include "CTable.h"
-
-bool validarPosicion(int& x, int& y, Ctablero& table) {
+bool validarPosicion(int& x, int& y, CTablero& table) {
     if (x > 1 && y < 1) {
         if(x < table.mDimension && y < table.mDimension)
             return true;
