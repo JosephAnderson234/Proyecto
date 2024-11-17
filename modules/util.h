@@ -5,6 +5,6 @@
 
 bool validarPosicion(int& x, int& y, Ctablero& table);
 
-bool validarDificultad(int levelInput);
+bool validarDificultad(int levelInput, int* input_levels);
 
 #endif //UTIL_H
