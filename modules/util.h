@@ -5,6 +5,6 @@
 
 bool validarPosicion(int& x, int& y, CTablero& table);
 
-bool validarDificultad(int levelInput, int* input_levels);
+void validarDificultad(std::string& nombre_jugador, int& nivel_input);
 
 #endif //UTIL_H

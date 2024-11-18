@@ -4,7 +4,6 @@
 #include <fstream>
 #include <algorithm>
 #include "CJugador.h"
-#include "menu.h"
 
 //Actualizar estadisticas por cada jugador nuevo
 void guardar_estadisticas(CJugador* gamer);

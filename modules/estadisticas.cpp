@@ -1,7 +1,6 @@
+#include "CJugador.h"
 #include "estadisticas.h"
 
-#include "menu.h"
-#include "menu.h"
 
 void guardar_estadisticas(CJugador* gamer){ //guardar o actualizar
     ofstream archivo;

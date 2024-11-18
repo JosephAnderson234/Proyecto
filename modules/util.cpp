@@ -12,12 +12,12 @@ bool validarPosicion(int& x, int& y, CTablero& table) {
 };
 
 
-bool validarDificultad(int levelInput, std::vector<int> levels) {
-    //retorna true si el nivel seleccionado está dentro del vector(se puede cambiar por puntero de un array)
-    //que contiene todos los niveles de difcultad
-    for (int i = 0; i < levels.size(); i++) {
-        if (levels[i] == levelInput)
-            return false;
-    }
-    return true;
+void validarDificultad(std::string& nombre_jugador, int& nivel_input) {
+    do {
+        std::cout << nombre_jugador<< " seleccione una dificultad: ";
+        std::cin >>nivel_input;
+        if(nivel_input<0 || nivel_input>3) {
+            std::cout << "Error: Seleccione una opcion valida." << std::endl;
+        }
+    }while(nivel_input<0 || nivel_input>3);
 }

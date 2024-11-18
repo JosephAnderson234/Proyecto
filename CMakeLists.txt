@@ -9,4 +9,7 @@ add_executable(proyect main.cpp
         modules/util.cpp
         modules/util.h
         modules/control-game.cpp
-        modules/control-game.h)
+        modules/control-game.h
+        modules/menu.h
+        modules/estadisticas.h
+        modules/estadisticas.cpp)

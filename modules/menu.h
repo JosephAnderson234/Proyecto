@@ -2,10 +2,12 @@
 #define MENU_H
 #include <iostream>
 #include "estadisticas.cpp"
+#include "util.h"
 #include <iomanip>
 
 //Decidi implementar las funciones dentro del header al ser hasta el momento 2.
 void Jugar();
+void Menu();
 void Menu(){
         int option_menu;
         cout << "----------------------------------------" << endl;
@@ -33,6 +35,7 @@ void Menu(){
             }
         }while(option_menu<1 || option_menu>3);
     }
+
 void Jugar() {
     int nivel_dificultad;
     string nombre_jugador;
@@ -46,13 +49,8 @@ void Jugar() {
     cout << "|  3. Dificil                          |" << endl;
     cout << "|  Presione 0 para regresar            |" << endl;
     cout << "----------------------------------------" << endl;
-    do {
-        cout << nombre_jugador<< " seleccione una dificultad: ";
-        cin >>nivel_dificultad;
-        if(nivel_dificultad<0 || nivel_dificultad>3) {
-            cout << "Error: Seleccione una opcion valida." << endl;
-        }
-    }while(nivel_dificultad<0 || nivel_dificultad>3);
+
+    validarDificultad(nombre_jugador, nivel_dificultad);
     // En este caso se tendria que crear una funcion que de comienzo a la partida (con un objeto tipo CTablero), donde el tamaño del tablero dependeria de la dificultad.
     //Por dicha razon se envia a este como su parametro, ademas de registrar el nombre del jugador para las estadisticas cuando la partida culmine.
     //empezarJuego(nombre_jugador, nivel_dificultad);
