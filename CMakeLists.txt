@@ -3,13 +3,7 @@ project(proyect)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(proyect main.cpp)
-        add_executable(modules/CTable.cpp)
-        add_executable(modules/CTable.h)
-        add_executable(modules/util.cpp)
-        add_executable(modules/util.h)
-        add_executable(modules/control-game.cpp)
-        add_executable(modules/control-game.h)
-        add_executable(modules/menu.h)
-        add_executable(modules/estadisticas.h)
-        add_executable(modules/estadisticas.cpp)
+add_executable(proyect main.cpp modules/CTable.cpp
+        modules/CTable.h modules/util.cpp modules/util.h modules/control-game.cpp
+        modules/control-game.h modules/menu.h modules/estadisticas.h modules/estadisticas.cpp)
+
