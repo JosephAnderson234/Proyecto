@@ -1,7 +1,7 @@
 #ifndef MENU_H
 #define MENU_H
 #include <iostream>
-#include "estadisticas.cpp"
+#include "estadisticas.h"
 #include "util.h"
 #include <iomanip>
 
