@@ -59,7 +59,7 @@ void CTablero::buscarMina() {
     for (int i=0; i<mDimension;i++) {
         for (int j=0; j<mDimension;j++) {
             if (mTableSolved[i][j]=='X') {
-                mTable[i][j]=='X';
+                mTable[i][j]='X';
             }
         }
     }
@@ -92,6 +92,8 @@ void imprimir(const CTablero& tablero) {
         }
         cout<<endl;
     }
+
+    cout<<"\n\n";
 }
 //suponiendo que ingresan (1,1) se refieren a (0,0)
 void CTablero::colocarBandera(const int& x, const int& y) {
@@ -107,6 +109,22 @@ void CTablero::colocarBandera(const int& x, const int& y) {
 
 void CTablero::descubrirCeldas0(const int& x, const int& y) {
 
+    for (int dx=-1; dx<=1;dx++) {
+        for (int dy=-1; dy<=1;dy++) {
+            if (dx == 0 && dy == 0) continue; //ignorar la celda actual
+            // Coordenadas de la celda vecina
+            int nx = x + dx;
+            int ny = y + dy;
+            if (nx>=0 && nx<mDimension && ny>=0 && ny<mDimension) { //VALIDO QUE LA POSICION DÓNDE BUSCARÉ ESTE DENTRO DE LA MATRIZ
+                if (mTableSolved[nx][ny]=='0' && mTable[nx][ny]=='-') {
+                    mTable[nx][ny]=mTableSolved[nx][ny];
+                    descubrirCeldas0(nx,ny); //llamada recursiva para seguir descubriendo
+                }else if (mTableSolved[nx][ny]>='1' && mTableSolved[nx][ny]<='8'){
+                    mTable[nx][ny]=mTableSolved[nx][ny];
+                }
+            }
+        }
+    }
 }
 
 
@@ -115,11 +133,12 @@ void CTablero::jugada(const int& x, const int& y) {
             //descubrir una posicion nueva
     if (mTable[x-1][y-1]=='F' || mTable[x-1][y-1]=='-') {
         if (mTableSolved[x-1][y-1]=='0') {
-            //PENDIENTE
+            descubrirCeldas0(x-1,y-1);
+            imprimir(*this);
         }else if(mTableSolved[x-1][y-1]>'0' && mTableSolved[x-1][y-1]<='8') {
             mTable[x-1][y-1]=mTableSolved[x-1][y-1];
             imprimir(*this);
-        }else { //encontró mina
+        }else if (mTableSolved[x-1][y-1]=='X'){ //encontró mina
             buscarMina();
             imprimir(*this);
         }
