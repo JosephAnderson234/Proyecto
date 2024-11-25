@@ -3,7 +3,7 @@
 #include "util.h"
 #include <iomanip>
 #include "Menu.h"
-
+#include "CJugador.h"
 void Menu(){
         int option_menu;
         cout << "----------------------------------------" << endl;
@@ -38,6 +38,8 @@ void Jugar() {
 
     cout<< "Escriba su nombre: "; cin >>nombre_jugador;
     cout << endl;
+
+
     cout << "----------------------------------------" << endl;
     cout << "|            Buscaminas:Jugar          |" << endl;
     cout << "|  1. Facil                            |" << endl;
@@ -47,8 +49,13 @@ void Jugar() {
     cout << "----------------------------------------" << endl;
 
     validarDificultad(nombre_jugador, nivel_dificultad);
-    // En este caso se tendria que crear una funcion que de comienzo a la partida (con un objeto tipo CTablero), donde el tamaño del tablero dependeria de la dificultad.
-    //Por dicha razon se envia a este como su parametro, ademas de registrar el nombre del jugador para las estadisticas cuando la partida culmine.
-    //empezarJuego(nombre_jugador, nivel_dificultad);
 
+    CJugador* player = new CJugador(nombre_jugador, nivel_dificultad);
+
+    while (true) {
+
+    }
+
+    delete player;
+    Menu();
 }

@@ -2,20 +2,37 @@
 #define CJUGADOR_H
 #include <string>
 #include <vector>
+#include "CTable.h"
 using namespace std;
 
 class CJugador {
     string nombre;
-    int turnos;
+    int turnos = 0;
     int dificultad;
+    CTablero* tablero;
 public:
-    CJugador(string name, int turnes, int dificulty): nombre(name), turnos(turnes), dificultad(dificulty) {};
+    CJugador(string name, int dificulty): nombre(name),  dificultad(dificulty) {
+        switch (dificulty) {
+            case 1:
+                tablero = new CTablero(6);
+                break;
+            case 2:
+                tablero = new CTablero(8);
+                break;
+            case 3:
+                tablero = new CTablero(10);
+                break;
+        }
+    };
     friend class CTablero;
     friend void guardar_estadisticas(CJugador* gamer);
     friend void mostrarEstadisticas();
     friend void ordenarNivel(vector <CJugador*> jugadores_dificultad);
     friend bool compararJugadores(CJugador* a, CJugador* b);
-    ~CJugador();
+    friend void operator++(CJugador* player, int);
+    ~CJugador() {
+        delete tablero;
+    };
 };
 
 

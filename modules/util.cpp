@@ -22,3 +22,7 @@ void validarDificultad(std::string& nombre_jugador, int& nivel_input) {
         }
     }while(nivel_input<0 || nivel_input>3);
 }
+
+void operator++(CJugador* player, int) {
+    player->turnos++;
+}
