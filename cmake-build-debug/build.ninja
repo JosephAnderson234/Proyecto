@@ -55,6 +55,12 @@ build CMakeFiles/proyect.dir/main.cpp.obj: CXX_COMPILER__proyect_unscanned_Debug
   OBJECT_DIR = CMakeFiles\proyect.dir
   OBJECT_FILE_DIR = CMakeFiles\proyect.dir
 
+build CMakeFiles/proyect.dir/modules/CJugador.cpp.obj: CXX_COMPILER__proyect_unscanned_Debug C$:/Users/cosea/CLionProjects/proyect/modules/CJugador.cpp || cmake_object_order_depends_target_proyect
+  DEP_FILE = CMakeFiles\proyect.dir\modules\CJugador.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\proyect.dir
+  OBJECT_FILE_DIR = CMakeFiles\proyect.dir\modules
+
 build CMakeFiles/proyect.dir/modules/CTable.cpp.obj: CXX_COMPILER__proyect_unscanned_Debug C$:/Users/cosea/CLionProjects/proyect/modules/CTable.cpp || cmake_object_order_depends_target_proyect
   DEP_FILE = CMakeFiles\proyect.dir\modules\CTable.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
@@ -79,12 +85,6 @@ build CMakeFiles/proyect.dir/modules/estadisticas.cpp.obj: CXX_COMPILER__proyect
   OBJECT_DIR = CMakeFiles\proyect.dir
   OBJECT_FILE_DIR = CMakeFiles\proyect.dir\modules
 
-build CMakeFiles/proyect.dir/modules/CJugador.cpp.obj: CXX_COMPILER__proyect_unscanned_Debug C$:/Users/cosea/CLionProjects/proyect/modules/CJugador.cpp || cmake_object_order_depends_target_proyect
-  DEP_FILE = CMakeFiles\proyect.dir\modules\CJugador.cpp.obj.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\proyect.dir
-  OBJECT_FILE_DIR = CMakeFiles\proyect.dir\modules
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target proyect
@@ -93,7 +93,7 @@ build CMakeFiles/proyect.dir/modules/CJugador.cpp.obj: CXX_COMPILER__proyect_uns
 #############################################
 # Link the executable proyect.exe
 
-build proyect.exe: CXX_EXECUTABLE_LINKER__proyect_Debug CMakeFiles/proyect.dir/main.cpp.obj CMakeFiles/proyect.dir/modules/CTable.cpp.obj CMakeFiles/proyect.dir/modules/util.cpp.obj CMakeFiles/proyect.dir/modules/Menu.cpp.obj CMakeFiles/proyect.dir/modules/estadisticas.cpp.obj CMakeFiles/proyect.dir/modules/CJugador.cpp.obj
+build proyect.exe: CXX_EXECUTABLE_LINKER__proyect_Debug CMakeFiles/proyect.dir/main.cpp.obj CMakeFiles/proyect.dir/modules/CJugador.cpp.obj CMakeFiles/proyect.dir/modules/CTable.cpp.obj CMakeFiles/proyect.dir/modules/util.cpp.obj CMakeFiles/proyect.dir/modules/Menu.cpp.obj CMakeFiles/proyect.dir/modules/estadisticas.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\proyect.dir

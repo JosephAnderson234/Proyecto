@@ -1,5 +1,6 @@
 #ifndef CJUGADOR_H
 #define CJUGADOR_H
+#include <iostream>
 #include <string>
 #include <vector>
 #include "CTable.h"
@@ -9,22 +10,11 @@ class CJugador {
     string nombre;
     int turnos = 0;
     int dificultad;
-    CTablero* tablero;
+    CTablero* tablero = nullptr;
 public:
-    CJugador(string name, int dificulty): nombre(name),  dificultad(dificulty) {
-        switch (dificulty) {
-            case 1:
-                tablero = new CTablero(6);
-                break;
-            case 2:
-                tablero = new CTablero(8);
-                break;
-            case 3:
-                tablero = new CTablero(10);
-                break;
-        }
-    };
-    CJugador(string name, int turns, int dificulty): nombre(name), turnos(turns), dificultad(dificulty){}
+    CJugador(string name, int dificulty);
+    CJugador(string name, int turns, int dificulty);
+    bool jugar(int x, int y);
     friend class CTablero;
     friend void guardar_estadisticas(CJugador* gamer);
     friend void mostrarEstadisticas();

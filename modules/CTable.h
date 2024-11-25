@@ -16,7 +16,7 @@ public:
     void colocarBandera(const int& x, const int& y);
     void buscarMina();
     friend bool validarPosicion(int& x, int& y, CTablero& table);
-    void jugada(const int& x, const int& y);
+    bool jugada(const int& x, const int& y);
     void descubrirCeldas0(const int& x, const int& y);
     ~CTablero(){}
 };

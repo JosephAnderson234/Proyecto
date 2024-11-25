@@ -51,7 +51,16 @@ void Jugar() {
     validarDificultad(nombre_jugador, nivel_dificultad);
 
     if (nivel_dificultad != 0) {
+
         CJugador* player = new CJugador(nombre_jugador, nivel_dificultad);
+        int x, y;
+        do {
+            cout<<"X:";
+            cin>>x;
+            cout<<"Y: ";
+            cin>>y;
+            (*player)++;
+        }while (player->jugar(x, y));
         delete player;
     }
 

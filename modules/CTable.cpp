@@ -8,7 +8,9 @@ using namespace std;
 CTablero::CTablero(int dimension) :
             mDimension(dimension),
             mTable(dimension, vector<char>(dimension,'-')),
-            mTableSolved(dimension, vector<char>(dimension,'-')) {}
+            mTableSolved(dimension, vector<char>(dimension,'-')) {
+    crearTabla();
+}
 //el codigo para crear el tablero y a la vez el otro tablero donde se buscará
 
 void CTablero::crearTabla() {
@@ -128,19 +130,22 @@ void CTablero::descubrirCeldas0(const int& x, const int& y) {
 }
 
 
-void CTablero::jugada(const int& x, const int& y) {
+bool CTablero::jugada(const int& x, const int& y) {
     //casos: ya se revelo la posicion intertar con otra coordenada (PENDIENTE)
             //descubrir una posicion nueva
     if (mTable[x-1][y-1]=='F' || mTable[x-1][y-1]=='-') {
         if (mTableSolved[x-1][y-1]=='0') {
             descubrirCeldas0(x-1,y-1);
             imprimir(*this);
+            return true;
         }else if(mTableSolved[x-1][y-1]>'0' && mTableSolved[x-1][y-1]<='8') {
             mTable[x-1][y-1]=mTableSolved[x-1][y-1];
             imprimir(*this);
+            return true;
         }else if (mTableSolved[x-1][y-1]=='X'){ //encontró mina
             buscarMina();
             imprimir(*this);
+            return false;
         }
     }
 }

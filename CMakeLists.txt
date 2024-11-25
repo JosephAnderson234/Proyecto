@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(proyect main.cpp
         modules/CJugador.h
+        modules/CJugador.cpp
         modules/CTable.cpp
         modules/CTable.h
         modules/util.cpp
@@ -12,5 +13,4 @@ add_executable(proyect main.cpp
         modules/Menu.h
         modules/Menu.cpp
         modules/estadisticas.h
-        modules/estadisticas.cpp
-        modules/CJugador.cpp)
+        modules/estadisticas.cpp)

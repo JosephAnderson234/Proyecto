@@ -25,5 +25,5 @@ void validarDificultad(std::string& nombre_jugador, int& nivel_input) {
 }
 
 void operator++(CJugador& player, int) {
-    player.turnos++;
+    player.turnos += 1;
 }
