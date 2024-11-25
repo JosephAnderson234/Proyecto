@@ -24,6 +24,7 @@ void CTablero::crearTabla() {
     }else if (mDimension==10) {
         cant_Minas=rand()%6 + 15;   //15  a  20 minas (DIFÍCIL)
     }
+    mMinas=cant_Minas;
     while (cant_Minas>0) {
         int fila=rand()%mDimension;
         int columna=rand()%mDimension;
@@ -136,15 +137,12 @@ bool CTablero::jugada(const int& x, const int& y) {
     if (mTable[x-1][y-1]=='F' || mTable[x-1][y-1]=='-') {
         if (mTableSolved[x-1][y-1]=='0') {
             descubrirCeldas0(x-1,y-1);
-            imprimir(*this);
             return true;
         }else if(mTableSolved[x-1][y-1]>'0' && mTableSolved[x-1][y-1]<='8') {
             mTable[x-1][y-1]=mTableSolved[x-1][y-1];
-            imprimir(*this);
             return true;
         }else if (mTableSolved[x-1][y-1]=='X'){ //encontró mina
             buscarMina();
-            imprimir(*this);
             return false;
         }
     }

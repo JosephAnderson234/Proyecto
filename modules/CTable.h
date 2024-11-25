@@ -8,6 +8,7 @@ class CTablero {
     std::vector<std::vector<char>> mTableSolved; // son propuestas
     std::vector<std::vector<char>> mTable; // al final tu elijes como trabajar con esto karolay
     int mDimension;
+    int mMinas; //cant de minas asignadas a la tabla;
     //puede ser un atributo extra el número de minas
 public:
     CTablero(int dimension);

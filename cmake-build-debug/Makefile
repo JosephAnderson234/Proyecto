@@ -153,6 +153,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/proyect.dir/build.make CMakeFiles/proyect.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+modules/CJugador.o: modules/CJugador.cpp.o
+.PHONY : modules/CJugador.o
+
+# target to build an object file
+modules/CJugador.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proyect.dir/build.make CMakeFiles/proyect.dir/modules/CJugador.cpp.o
+.PHONY : modules/CJugador.cpp.o
+
+modules/CJugador.i: modules/CJugador.cpp.i
+.PHONY : modules/CJugador.i
+
+# target to preprocess a source file
+modules/CJugador.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proyect.dir/build.make CMakeFiles/proyect.dir/modules/CJugador.cpp.i
+.PHONY : modules/CJugador.cpp.i
+
+modules/CJugador.s: modules/CJugador.cpp.s
+.PHONY : modules/CJugador.s
+
+# target to generate assembly for a file
+modules/CJugador.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proyect.dir/build.make CMakeFiles/proyect.dir/modules/CJugador.cpp.s
+.PHONY : modules/CJugador.cpp.s
+
 modules/CTable.o: modules/CTable.cpp.o
 .PHONY : modules/CTable.o
 
@@ -200,30 +224,6 @@ modules/Menu.s: modules/Menu.cpp.s
 modules/Menu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/proyect.dir/build.make CMakeFiles/proyect.dir/modules/Menu.cpp.s
 .PHONY : modules/Menu.cpp.s
-
-modules/control-game.o: modules/control-game.cpp.o
-.PHONY : modules/control-game.o
-
-# target to build an object file
-modules/control-game.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/proyect.dir/build.make CMakeFiles/proyect.dir/modules/control-game.cpp.o
-.PHONY : modules/control-game.cpp.o
-
-modules/control-game.i: modules/control-game.cpp.i
-.PHONY : modules/control-game.i
-
-# target to preprocess a source file
-modules/control-game.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/proyect.dir/build.make CMakeFiles/proyect.dir/modules/control-game.cpp.i
-.PHONY : modules/control-game.cpp.i
-
-modules/control-game.s: modules/control-game.cpp.s
-.PHONY : modules/control-game.s
-
-# target to generate assembly for a file
-modules/control-game.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/proyect.dir/build.make CMakeFiles/proyect.dir/modules/control-game.cpp.s
-.PHONY : modules/control-game.cpp.s
 
 modules/estadisticas.o: modules/estadisticas.cpp.o
 .PHONY : modules/estadisticas.o
@@ -285,15 +285,15 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... modules/CJugador.o"
+	@echo "... modules/CJugador.i"
+	@echo "... modules/CJugador.s"
 	@echo "... modules/CTable.o"
 	@echo "... modules/CTable.i"
 	@echo "... modules/CTable.s"
 	@echo "... modules/Menu.o"
 	@echo "... modules/Menu.i"
 	@echo "... modules/Menu.s"
-	@echo "... modules/control-game.o"
-	@echo "... modules/control-game.i"
-	@echo "... modules/control-game.s"
 	@echo "... modules/estadisticas.o"
 	@echo "... modules/estadisticas.i"
 	@echo "... modules/estadisticas.s"
