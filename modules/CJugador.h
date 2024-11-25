@@ -15,6 +15,7 @@ public:
     friend void mostrarEstadisticas();
     friend void ordenarNivel(vector <CJugador*> jugadores_dificultad);
     friend bool compararJugadores(CJugador* a, CJugador* b);
+    ~CJugador();
 };
 
 

@@ -1,7 +1,8 @@
 //
 // Created by cosea on 15/11/2024.
 //
-
+#include <iostream>
+#include<string>
 #include "util.h"
 bool validarPosicion(int& x, int& y, CTablero& table) {
     if (x > 1 && y < 1) {
