@@ -55,12 +55,17 @@ void Jugar() {
         CJugador* player = new CJugador(nombre_jugador, nivel_dificultad);
         int x, y;
         do {
-            cout<<"X:";
-            cin>>x;
-            cout<<"Y: ";
-            cin>>y;
+            if (player->juegoTerminado()) {
+                cout<<"Ganaste";
+                break;
+            }
+            cout<<"Ingrese fila columna(f c):";cin>>x>>y;
             (*player)++;
-        }while (player->jugar(x, y));
+            if(!player->jugar(x, y)) {
+                cout<<"Perdiste";
+                break;
+            }
+        }while (true);
         delete player;
     }
 

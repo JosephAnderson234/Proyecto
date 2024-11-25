@@ -149,3 +149,14 @@ bool CTablero::jugada(const int& x, const int& y) {
         }
     }
 }
+
+bool CTablero::tableroCompleto() {
+    for (int i = 0; i < mDimension; i++) {
+        for (int j = 0; j <mDimension; i++) {
+            if (mTable[i][j] != mTableSolved[i][j]) {
+                return false;
+            }
+        }
+    }
+    return true;
+}

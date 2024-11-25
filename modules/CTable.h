@@ -12,6 +12,7 @@ class CTablero {
 public:
     CTablero(int dimension);
     void crearTabla();
+    bool tableroCompleto();
     friend void imprimir(const CTablero& tablero);
     void colocarBandera(const int& x, const int& y);
     void buscarMina();
