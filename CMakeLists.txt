@@ -8,6 +8,7 @@ add_executable(proyect main.cpp
         modules/CTable.h
         modules/util.cpp
         modules/util.h
-        modules/menu.h
+        modules/Menu.h
+        modules/Menu.cpp
         modules/estadisticas.h
         modules/estadisticas.cpp)
