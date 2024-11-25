@@ -148,13 +148,18 @@ bool CTablero::jugada(const int& x, const int& y) {
     }
 }
 
-bool CTablero::tableroCompleto() {
+int CTablero::tableroAvance() {
+    int progreso = 0;
     for (int i = 0; i < mDimension; i++) {
-        for (int j = 0; j <mDimension; i++) {
-            if (mTable[i][j] != mTableSolved[i][j]) {
-                return false;
+        for (int j = 0; j < mDimension; j++) {
+            if (mTable[i][j] == '-') {
+                progreso++;
             }
         }
     }
-    return true;
+    return progreso;
+}
+
+int CTablero::getMinas() {
+    return mMinas;
 }

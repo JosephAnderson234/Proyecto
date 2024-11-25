@@ -1,9 +1,5 @@
-#include <iostream>
-#include "estadisticas.h"
-#include "util.h"
-#include <iomanip>
 #include "Menu.h"
-#include "CJugador.h"
+#include "CTable.h"
 void Menu(){
         int option_menu;
         cout << "----------------------------------------" << endl;
@@ -53,16 +49,20 @@ void Jugar() {
     if (nivel_dificultad != 0) {
 
         CJugador* player = new CJugador(nombre_jugador, nivel_dificultad);
-        int x, y;
         do {
+            int x, y;
+            (*player)++;
+            cout<<"Turno: "<<player->turnos<<endl;
+            imprimir(*player->tablero);
             if (player->juegoTerminado()) {
-                cout<<"Ganaste";
+                cout<<"Ganaste"<<endl;
                 break;
             }
-            cout<<"Ingrese fila columna(f c):";cin>>x>>y;
-            (*player)++;
+            validarPosicion(x, y, *(player->tablero));
+
             if(!player->jugar(x, y)) {
-                cout<<"Perdiste";
+                imprimir(*player->tablero);
+                cout<<"Perdiste"<<endl;
                 break;
             }
         }while (true);

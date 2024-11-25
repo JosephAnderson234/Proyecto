@@ -4,12 +4,16 @@
 #include <iostream>
 #include<string>
 #include "util.h"
-bool validarPosicion(int& x, int& y, CTablero& table) {
-    if (x > 1 && y < 1) {
-        if(x < table.mDimension && y < table.mDimension)
-            return true;
-    }
-    return false;
+void validarPosicion(int& x, int& y, CTablero& table) {
+    bool status = true;
+    do {
+        cout<<"Ingrese fila columna(f c):";cin>>x>>y;
+        if (x >= 1 && y >= 1) {
+            if(x <= table.mDimension && y <= table.mDimension)
+                status = !table.mTable[x-1][y-1] == '-';
+        }
+    }while(status);
+
 };
 
 

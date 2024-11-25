@@ -17,6 +17,7 @@ public:
     bool jugar(int x, int y);
     bool juegoTerminado();
     friend class CTablero;
+    friend void Jugar();
     friend void guardar_estadisticas(CJugador* gamer);
     friend void mostrarEstadisticas();
     friend void ordenarNivel(vector <CJugador*> jugadores_dificultad);
