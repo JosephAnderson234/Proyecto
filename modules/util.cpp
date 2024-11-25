@@ -16,13 +16,14 @@ bool validarPosicion(int& x, int& y, CTablero& table) {
 void validarDificultad(std::string& nombre_jugador, int& nivel_input) {
     do {
         std::cout << nombre_jugador<< " seleccione una dificultad: ";
+        cin.clear();
         std::cin >>nivel_input;
         if(nivel_input<0 || nivel_input>3) {
             std::cout << "Error: Seleccione una opcion valida." << std::endl;
         }
-    }while(nivel_input<0 || nivel_input>3);
+    }while(nivel_input < 0 || nivel_input>3);
 }
 
-void operator++(CJugador* player, int) {
-    player->turnos++;
+void operator++(CJugador& player, int) {
+    player.turnos++;
 }

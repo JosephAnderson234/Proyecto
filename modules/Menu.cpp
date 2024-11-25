@@ -50,12 +50,10 @@ void Jugar() {
 
     validarDificultad(nombre_jugador, nivel_dificultad);
 
-    CJugador* player = new CJugador(nombre_jugador, nivel_dificultad);
-
-    while (true) {
-
+    if (nivel_dificultad != 0) {
+        CJugador* player = new CJugador(nombre_jugador, nivel_dificultad);
+        delete player;
     }
 
-    delete player;
     Menu();
 }

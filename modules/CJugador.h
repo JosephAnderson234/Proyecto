@@ -24,12 +24,13 @@ public:
                 break;
         }
     };
+    CJugador(string name, int turns, int dificulty): nombre(name), turnos(turns), dificultad(dificulty){}
     friend class CTablero;
     friend void guardar_estadisticas(CJugador* gamer);
     friend void mostrarEstadisticas();
     friend void ordenarNivel(vector <CJugador*> jugadores_dificultad);
     friend bool compararJugadores(CJugador* a, CJugador* b);
-    friend void operator++(CJugador* player, int);
+    friend void operator++(CJugador& player, int);
     ~CJugador() {
         delete tablero;
     };
