@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/proyect.dir/main.cpp.o CMakeFiles/proyect.dir/modules/CTable.cpp.o CMakeFiles/proyect.dir/modules/util.cpp.o "CMakeFiles/proyect.dir/modules/control-game.cpp.o" CMakeFiles/proyect.dir/modules/estadisticas.cpp.o CMakeFiles/proyect.dir/modules/Menu.cpp.o -o proyect
