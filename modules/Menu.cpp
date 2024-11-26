@@ -53,16 +53,19 @@ void Jugar() {
             int x, y;
             (*player)++;
             cout<<"Turno: "<<player->turnos<<endl;
+            cout<<"Minas: "<<player->tablero->getMinas()<<endl;
             imprimir(*player->tablero);
-            if (player->juegoTerminado()) {
-                cout<<"Ganaste"<<endl;
-                break;
-            }
+
             validarPosicion(x, y, *(player->tablero));
 
             if(!player->jugar(x, y)) {
                 imprimir(*player->tablero);
                 cout<<"Perdiste"<<endl;
+                break;
+            }
+            if (player->juegoTerminado()) {
+                imprimir(*player->tablero);
+                cout<<"Ganaste"<<endl;
                 break;
             }
         }while (true);

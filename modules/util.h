@@ -3,9 +3,12 @@
 
 #include "CTable.h"
 #include "CJugador.h"
+
 void validarPosicion(int& x, int& y, CTablero& table);
 
 void validarDificultad(std::string& nombre_jugador, int& nivel_input);
 
 void operator++(CJugador& player, int);
+
+int charToInt(char& text);
 #endif //UTIL_H
