@@ -1,39 +1,33 @@
 #include "Menu.h"
 #include "CTable.h"
 void Menu(){
-        int option_menu;
-        cout << "----------------------------------------" << endl;
-        cout << "|            Buscaminas                |" << endl;
-        cout << "|  1. Jugar                            |" << endl;
-        cout << "|  2. Mejores Jugadores                |" << endl;
-        cout << "|  3. Salir                            |" << endl;
-        cout << "----------------------------------------" << endl;
-        do {
-            cout <<"Seleccione una de las opciones: ";
-            cin >> option_menu;
-            switch(option_menu) {
-                case 1:
-                    Jugar();
-                    break;
-                case 2:
-                    mostrarEstadisticas();
-                break;
-                case 3:
-                    cout << "Hasta una proxima oportunidad!" <<endl;
-                    break;
-                default:
-                    cout << "Error: Seleccione una opcion valida" << endl;
-                    break;
-            }
-        }while(option_menu<1 || option_menu>3);
+    int option_menu;
+    cout << "----------------------------------------" << endl;
+    cout << "|            Buscaminas                |" << endl;
+    cout << "|  1. Jugar                            |" << endl;
+    cout << "|  2. Mejores Jugadores                |" << endl;
+    cout << "|  3. Salir                            |" << endl;
+    cout << "----------------------------------------" << endl;
+
+    validarEleccon(option_menu);
+    switch(option_menu) {
+        case 1:
+            Jugar();
+        break;
+        case 2:
+            mostrarEstadisticas();
+        break;
+        case 3:
+            cout << "Hasta una proxima oportunidad!" <<endl;
+        break;
     }
+}
 
 void Jugar() {
     int nivel_dificultad;
     string nombre_jugador;
 
-    cout<< "Escriba su nombre: "; cin >>nombre_jugador;
-    cout << endl;
+    nombreValido(nombre_jugador);
 
 
     cout << "----------------------------------------" << endl;

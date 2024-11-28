@@ -4,11 +4,10 @@
 #include<vector>
 
 class CTablero {
-    std::vector<std::vector<char>> mTableSolved; // son propuestas
-    std::vector<std::vector<char>> mTable; // al final tu elijes como trabajar con esto karolay
+    std::vector<std::vector<char>> mTableSolved;
+    std::vector<std::vector<char>> mTable;
     int mDimension;
-    int mMinas; //cant de minas asignadas a la tabla;
-    //puede ser un atributo extra el número de minas
+    int mMinas;
 public:
     CTablero(int dimension);
     void crearTabla();

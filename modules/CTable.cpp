@@ -33,7 +33,6 @@ void CTablero::crearTabla() {
             cant_Minas--;
         }
     }
-
     //LLENADO DE CELDAS QUE CUENTAN LAS MINAS QUE TIENEN A SU ALREDEDOR
     for (int i=0; i<mDimension;i++) {
         for (int j=0; j<mDimension;j++) {

@@ -4,11 +4,15 @@
 #include "CTable.h"
 #include "CJugador.h"
 
+void extraerPosiciones(string& line, int& x, int& y, int& tableDimension);
 void validarPosicion(int& x, int& y, CTablero& table);
+void validarDificultad(string& nombre_jugador, int& nivel_input);
+void validarEleccon(int& x);
 
-void validarDificultad(std::string& nombre_jugador, int& nivel_input);
+void nombreValido(string& str);
+
 
 void operator++(CJugador& player, int);
-
 int charToInt(char& text);
+bool caracterValido(char& letra);
 #endif //UTIL_H
