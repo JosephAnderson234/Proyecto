@@ -67,6 +67,17 @@ void CTablero::buscarMina() {
     }
 }
 
+void CTablero::marcarFMinas() {
+    //cuando el jugador pierde (encuentra una mina) se deben buscar todas las minas
+    for (int i=0; i<mDimension;i++) {
+        for (int j=0; j<mDimension;j++) {
+            if (mTableSolved[i][j]=='X') {
+                mTable[i][j]='F';
+            }
+        }
+    }
+}
+
 void imprimir(const CTablero& tablero) {
 
     //ENCABEZADO COLUMNA
@@ -97,14 +108,17 @@ void imprimir(const CTablero& tablero) {
 
     cout<<"\n\n";
 }
+
+
+
 //suponiendo que ingresan (1,1) se refieren a (0,0)
 void CTablero::colocarBandera(const int& x, const int& y) {
-    if (x>=1 && x<=mDimension && y>=1 && y<=mDimension) {
         if (mTable[x-1][y-1]=='-') {
-            mTable[x-1][y-1]=='F'; //SE COLOCA BANDERA
+            mTable[x-1][y-1]='F'; //SE COLOCA BANDERA
+            cout<<"Bandera colocada\n";
+        }else if (mTable[x-1][y-1]=='F') {
+            mTable[x-1][y-1]='-'; //SE QUITÓ LA BANDERA
         }
-    }
-
 
 }
 
@@ -131,10 +145,9 @@ void CTablero::descubrirCeldas0(const int& x, const int& y) {
 
 
 bool CTablero::jugada(const int& x, const int& y) {
-    //casos: ya se revelo la posicion intertar con otra coordenada (PENDIENTE)
-            //descubrir una posicion nueva
     if (mTable[x-1][y-1]=='F' || mTable[x-1][y-1]=='-') {
         if (mTableSolved[x-1][y-1]=='0') {
+            mTable[x-1][y-1]=mTableSolved[x-1][y-1];
             descubrirCeldas0(x-1,y-1);
             return true;
         }else if(mTableSolved[x-1][y-1]>'0' && mTableSolved[x-1][y-1]<='8') {
@@ -147,16 +160,21 @@ bool CTablero::jugada(const int& x, const int& y) {
     }
 }
 
-int CTablero::tableroAvance() {
-    int progreso = 0;
-    for (int i = 0; i < mDimension; i++) {
-        for (int j = 0; j < mDimension; j++) {
-            if (mTable[i][j] == '-') {
-                progreso++;
+bool CTablero::tableroAvance() {
+    int progress = 0;
+    for (int i =0; i < mDimension; i++){
+        for (int j = 0; j <mDimension; j++) {
+            if (mTable[i][j] == '-' || (mTable[i][j] == 'F')) {
+                progress++;
             }
         }
     }
-    return progreso;
+    cout<<progress<<"\n";
+    if (progress == mMinas) {
+        return true;
+    }
+
+    return false;
 }
 
 int CTablero::getMinas() {

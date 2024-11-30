@@ -49,15 +49,28 @@ void Jugar() {
             cout<<"Turno: "<<player->turnos<<endl;
             cout<<"Minas: "<<player->tablero->getMinas()<<endl;
             imprimir(*player->tablero);
+            string accion;
+            string accion_buscar;
+            do {
+                cout<<"Va a desenterrar o marcar/descarmarcar (D o F):";
+                getline(cin, accion);
+            } while (accion != "D" && accion != "F");
 
-            validarPosicion(x, y, *(player->tablero));
-
-            if(!player->jugar(x, y)) {
-                imprimir(*player->tablero);
-                cout<<"Perdiste"<<endl;
-                break;
+            if (accion == "D") {
+                accion_buscar = "-";
+                validarPosicion(x, y, *(player->tablero), accion_buscar);
+                if(!player->jugar(x, y)) {
+                    imprimir(*player->tablero);
+                    cout<<"Perdiste"<<endl;
+                    break;
+                }
+            } else {
+                accion_buscar = "F-";
+                validarPosicion(x, y, *(player->tablero), accion_buscar);
+                player->tablero->colocarBandera(x, y);
             }
-            if (player->juegoTerminado()) {
+            if (player->tablero->tableroAvance()) {
+                player->tablero->marcarFMinas();
                 imprimir(*player->tablero);
                 cout<<"Ganaste"<<endl;
                 break;

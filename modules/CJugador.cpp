@@ -18,9 +18,7 @@ CJugador::CJugador(string name, int turns, int dificulty): nombre(name), turnos(
 
 
 bool CJugador::jugar(int x, int y) {
+
+
     return tablero->jugada(x,y);
-}
-bool CJugador::juegoTerminado() {
-    int progreso = tablero->tableroAvance();
-    return progreso == tablero->getMinas();
 }

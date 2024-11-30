@@ -2,6 +2,8 @@
 #define CTABLE_H
 
 #include<vector>
+#include <string>
+#include <math.h>
 
 class CTablero {
     std::vector<std::vector<char>> mTableSolved;
@@ -12,11 +14,13 @@ public:
     CTablero(int dimension);
     void crearTabla();
     int getMinas();
-    int tableroAvance();
+    bool tableroAvance();
     friend void imprimir(const CTablero& tablero);
+    friend class CJugador;
     void colocarBandera(const int& x, const int& y);
     void buscarMina();
-    friend void validarPosicion(int& x, int& y, CTablero& table);
+    void marcarFMinas();
+    friend void validarPosicion(int& x, int& y, CTablero& table, std::string& aceppted);
     bool jugada(const int& x, const int& y);
     void descubrirCeldas0(const int& x, const int& y);
     ~CTablero(){}

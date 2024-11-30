@@ -65,7 +65,7 @@ void extraerPosiciones(string& line, int& x, int& y) {
 }
 
 
-void validarPosicion(int& x, int& y, CTablero& table) {
+void validarPosicion(int& x, int& y, CTablero& table, string& aceppted) {
     do {
         string temp;
         cout<<"Ingrese fila columna(f c):";
@@ -73,7 +73,7 @@ void validarPosicion(int& x, int& y, CTablero& table) {
         extraerPosiciones(temp, x, y);
         if (x >= 1 && y >= 1) {
             if((x <= table.mDimension) && (y <= table.mDimension)) {
-                if (table.mTable[x-1][y-1] == '-') {
+                if (aceppted.find(table.mTable[x - 1][y - 1]) != string::npos) {
                     break;
                 } else {
                     cout<<"Seleccione una celda que este disponible\n";

@@ -9,6 +9,7 @@ using namespace std;
 class CJugador {
     string nombre;
     int turnos = 0;
+    int banderas = 0;
     int dificultad;
     CTablero* tablero = nullptr;
 public:
