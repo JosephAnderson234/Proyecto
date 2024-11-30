@@ -1,7 +1,6 @@
 #ifndef UTIL_H
 #define UTIL_H
 
-#include "CTable.h"
 #include "CJugador.h"
 
 void extraerPosiciones(string& line, int& x, int& y, int& tableDimension);

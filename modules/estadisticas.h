@@ -1,6 +1,5 @@
 #ifndef ESTADISTICAS_H
 #define ESTADISTICAS_H
-#include <iostream>
 #include <fstream>
 #include <algorithm>
 #include "CJugador.h"

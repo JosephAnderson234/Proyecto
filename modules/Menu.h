@@ -1,14 +1,14 @@
 #ifndef MENU_H
 #define MENU_H
-#include <iostream>
 #include "estadisticas.h"
 #include "util.h"
-#include <iomanip>
 
-
-#include "CJugador.h"
 //Decidi implementar las funciones dentro del header al ser hasta el momento 2.
 void Jugar();
+bool verificarFinDeJuego(CJugador* player);
+void procesarAccion(CJugador* player, int& x, int& y, string& accion_buscar);
+void jugarBuscaminas(int nivel_dificultad, string nombre_jugador);
+void mostrarMenuDificultad();
 void Menu();
 
 

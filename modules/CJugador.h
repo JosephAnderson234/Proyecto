@@ -1,8 +1,5 @@
 #ifndef CJUGADOR_H
 #define CJUGADOR_H
-#include <iostream>
-#include <string>
-#include <vector>
 #include "CTable.h"
 using namespace std;
 

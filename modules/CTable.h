@@ -3,7 +3,10 @@
 
 #include<vector>
 #include <string>
-#include <math.h>
+#include <cmath>
+#include <iostream>
+#include <ctime>
+#include <iomanip>
 
 class CTablero {
     std::vector<std::vector<char>> mTableSolved;

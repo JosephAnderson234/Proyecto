@@ -1,5 +1,4 @@
 #include "Menu.h"
-#include "CTable.h"
 void Menu(){
     int option_menu;
     cout << "----------------------------------------" << endl;
@@ -39,9 +38,9 @@ void procesarAccion(CJugador* player, int& x, int& y, string& accion_buscar) {
     do {
         cout << "Va a desenterrar o marcar/desmarcar (D o F): ";
         getline(cin, accion);
-    } while (accion != "D" && accion != "F");
+    } while (accion != "D"&& accion != "d"&& accion != "f" && accion != "F");
 
-    if (accion == "D") {
+    if (accion == "D" || accion == "d") {
         accion_buscar = "-";
         validarPosicion(x, y, *(player->tablero), accion_buscar);
         if (!player->jugar(x, y)) {

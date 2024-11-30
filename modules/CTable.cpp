@@ -1,8 +1,4 @@
 #include "CTable.h"
-#include <iostream>
-#include <vector>
-#include <ctime>
-#include <iomanip>
 using namespace std;
 
 CTablero::CTablero(int dimension) :

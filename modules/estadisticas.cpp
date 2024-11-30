@@ -1,4 +1,3 @@
-#include "CJugador.h"
 #include "estadisticas.h"
 
 
