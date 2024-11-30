@@ -56,7 +56,6 @@ void ordenarNivel(vector <CJugador*> jugadores_dificultad) {
         cout <<endl;
     }
 void mostrarEstadisticas() {
-    int option_menu;
     vector <CJugador*> jugadores = cargar_jugadores();
     vector <CJugador*> facil, medio, dificil;
     for(int i=0;i<jugadores.size();i++) {
@@ -81,9 +80,5 @@ void mostrarEstadisticas() {
     cout << "Dificil:" << endl;
     ordenarNivel(dificil);
     cout << "----------------------------------------" << endl;
-    do {
-        cout << "Presione 0 para regresar al Menu: "<< endl;
-        cin >>option_menu;
-    }while(option_menu!=0);
 
 }

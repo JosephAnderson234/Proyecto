@@ -55,6 +55,7 @@ void extraerPosiciones(string& line, int& x, int& y) {
                 x = -1;
                 y = -1;
             }
+        break;
         case 5:
             x = line[2] == ' ' ? charToInt(line[0])*10 + charToInt(line[1]) : -1;
             y = line[2] == ' ' ? charToInt(line[3])*10 + charToInt(line[4]) : -1;

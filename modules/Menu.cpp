@@ -16,6 +16,7 @@ void Menu(){
         break;
         case 2:
             mostrarEstadisticas();
+            Menu();
         break;
         case 3:
             cout << "Hasta una proxima oportunidad!" <<endl;
@@ -73,6 +74,7 @@ void Jugar() {
                 player->tablero->marcarFMinas();
                 imprimir(*player->tablero);
                 cout<<"Ganaste"<<endl;
+                guardar_estadisticas(player);
                 break;
             }
         }while (true);
