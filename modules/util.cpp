@@ -40,26 +40,49 @@ void validarEleccon(int& x) {
 void extraerPosiciones(string& line, int& x, int& y) {
 
     switch (line.size()) {
-        case 3:
-            x = line.size() == 3 && line[1] == ' ' ? charToInt(line[0]) : -1;
-            y = line.size() == 3 && line[1] == ' ' ? charToInt(line[2]) : -1;
-            break;
-        case 4:
+        case 3: {
+            // formato "x y"
             if (line[1] == ' ') {
                 x = charToInt(line[0]);
-                y = charToInt(line[2])*10+charToInt(line[3]);
-            }else if(line[2] == ' ') {
-                x = charToInt(line[0])*10+charToInt(line[1]);
+                y = charToInt(line[2]);
+            } else {
+                x = y = -1; // Valor por defecto si no es "x y"
+            }
+            break;
+        }
+
+        case 4: {
+            // Pposibles formatos:
+            // 1. "x yyy"
+            // 2. "xx y"
+            if (line[1] == ' ') {
+                x = charToInt(line[0]);
+                y = charToInt(line[2]) * 10 + charToInt(line[3]);
+            } else if (line[2] == ' ') {
+                x = charToInt(line[0]) * 10 + charToInt(line[1]);
                 y = charToInt(line[3]);
             } else {
-                x = -1;
-                y = -1;
+                x = y = -1; // Caso no válido
             }
-        break;
-        case 5:
-            x = line[2] == ' ' ? charToInt(line[0])*10 + charToInt(line[1]) : -1;
-            y = line[2] == ' ' ? charToInt(line[3])*10 + charToInt(line[4]) : -1;
             break;
+        }
+
+        case 5: {
+            // formato "xx yy"
+            if (line[2] == ' ') {
+                x = charToInt(line[0]) * 10 + charToInt(line[1]);
+                y = charToInt(line[3]) * 10 + charToInt(line[4]);
+            } else {
+                x = y = -1; // Valor por defecto si no es válido
+            }
+            break;
+        }
+
+        default: {
+            // Caso por defecto, tamaño inválido
+            x = y = -1;
+            break;
+        }
     }
 
 
@@ -83,7 +106,7 @@ void validarPosicion(int& x, int& y, CTablero& table, string& aceppted) {
                 cout<<"Error: Seleccione una opcion dentro de las dimensiones.\n"<<endl;
             }
         }else {
-            cout<<"Error: Seleccione una opcion mayor a 0.\n"<<endl;
+            cout<<"Error: caso no valido\n"<<endl;
         }
 
     }while(true);

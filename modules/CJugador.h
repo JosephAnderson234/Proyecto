@@ -18,8 +18,10 @@ public:
     bool jugar(int x, int y);
     bool juegoTerminado();
     friend class CTablero;
-    friend void Jugar();
     friend void guardar_estadisticas(CJugador* gamer);
+    friend void jugarBuscaminas(int nivel_dificultad, string nombre_jugador);
+    friend bool verificarFinDeJuego(CJugador* player);
+    friend void procesarAccion(CJugador* player, int& x, int& y, string& accion_buscar);
     friend void mostrarEstadisticas();
     friend void ordenarNivel(vector <CJugador*> jugadores_dificultad);
     friend bool compararJugadores(CJugador* a, CJugador* b);

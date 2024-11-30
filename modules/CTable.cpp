@@ -169,7 +169,6 @@ bool CTablero::tableroAvance() {
             }
         }
     }
-    cout<<progress<<"\n";
     if (progress == mMinas) {
         return true;
     }
