@@ -19,7 +19,6 @@ public:
     int getMinas();
     bool tableroAvance();
     friend void imprimir(const CTablero& tablero);
-    friend class CJugador;
     void colocarBandera(const int& x, const int& y);
     void buscarMina();
     void marcarFMinas();
