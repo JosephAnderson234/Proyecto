@@ -17,6 +17,7 @@ public:
     CTablero(int dimension);
     void crearTabla();
     int getMinas();
+    int banderasColocadas();
     bool tableroAvance();
     friend void imprimir(const CTablero& tablero);
     void colocarBandera(const int& x, const int& y);

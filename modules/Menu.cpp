@@ -52,6 +52,7 @@ bool procesarAccion(CJugador* player, int& x, int& y, string& accion_buscar) {
         accion_buscar = "F-";
         validarPosicion(x, y, *(player->tablero), accion_buscar);
         player->tablero->colocarBandera(x, y);
+        player->banderas = player->tablero->banderasColocadas();
     }
     return true;
 }
@@ -72,9 +73,10 @@ void jugarBuscaminas(int nivel_dificultad, string nombre_jugador) {
 
     do {
         int x, y;
-        (*player)++;  // Incrementar turno
+        (*player)++;
         cout << "Turno: " << player->turnos << endl;
         cout << "Minas: " << player->tablero->getMinas() << endl;
+        cout << "Banderas: "<<player->banderas<<endl;
         imprimir(*player->tablero);
 
         string accion_buscar;

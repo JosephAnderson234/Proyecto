@@ -51,6 +51,16 @@ void CTablero::crearTabla() {
 
 }
 
+int CTablero::banderasColocadas() {
+    int banderas = 0;
+    for (int i = 0; i <mDimension; i++) {
+        for (int j = 0; j <mDimension; j++) {
+            banderas += mTable[i][j] == 'F' ? 1 : 0;
+        }
+    }
+    return banderas;
+}
+
 
 void CTablero::buscarMina() {
     //cuando el jugador pierde (encuentra una mina) se deben buscar todas las minas
