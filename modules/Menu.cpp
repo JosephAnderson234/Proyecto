@@ -33,7 +33,7 @@ void mostrarMenuDificultad() {
     cout << "----------------------------------------" << endl;
 }
 
-void procesarAccion(CJugador* player, int& x, int& y, string& accion_buscar) {
+bool procesarAccion(CJugador* player, int& x, int& y, string& accion_buscar) {
     string accion;
     do {
         cout << "Va a desenterrar o marcar/desmarcar (D o F): ";
@@ -46,12 +46,14 @@ void procesarAccion(CJugador* player, int& x, int& y, string& accion_buscar) {
         if (!player->jugar(x, y)) {
             imprimir(*player->tablero);
             cout << "Perdiste" << endl;
+            return false;
         }
     } else {
         accion_buscar = "F-";
         validarPosicion(x, y, *(player->tablero), accion_buscar);
         player->tablero->colocarBandera(x, y);
     }
+    return true;
 }
 
 bool verificarFinDeJuego(CJugador* player) {
@@ -76,7 +78,9 @@ void jugarBuscaminas(int nivel_dificultad, string nombre_jugador) {
         imprimir(*player->tablero);
 
         string accion_buscar;
-        procesarAccion(player, x, y, accion_buscar);
+        if (!procesarAccion(player, x, y, accion_buscar)) {
+            break;
+        }
 
         if (verificarFinDeJuego(player)) {
             break;

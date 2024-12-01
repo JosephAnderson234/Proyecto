@@ -1,16 +1,37 @@
-"C:\Program Files\JetBrains\CLion 2024.2.0.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/ninja/win/x64/ninja.exe" -G Ninja -S C:\Users\cosea\CLionProjects\proyect -B C:\Users\cosea\CLionProjects\proyect\cmake-build-debug
--- The C compiler identification is GNU 13.1.0
--- The CXX compiler identification is GNU 13.1.0
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Check for working C compiler: C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/mingw/bin/gcc.exe - skipped
--- Detecting C compile features
--- Detecting C compile features - done
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/mingw/bin/g++.exe - skipped
--- Detecting CXX compile features
--- Detecting CXX compile features - done
--- Configuring done (7.6s)
+"C:\Program Files\JetBrains\CLion 2024.2.0.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/ninja/win/x64/ninja.exe" --graphviz=graph.dot -G Ninja -S C:\Users\cosea\CLionProjects\proyect -B C:\Users\cosea\CLionProjects\proyect\cmake-build-debug
+-- Configuring done (0.2s)
+The initial target dependency graph is:
+target 0 is [proyect]
+target 1 is [edit_cache]
+target 2 is [rebuild_cache]
+
+The side effects are:
+target 0 is [proyect]
+target 1 is [edit_cache]
+  custom commands
+    from target 1 [edit_cache]
+target 2 is [rebuild_cache]
+  custom commands
+    from target 2 [rebuild_cache]
+
+The intermediate target dependency graph is:
+target 0 is [proyect]
+target 1 is [edit_cache]
+target 2 is [rebuild_cache]
+
+The strongly connected components for the intermediate graph are:
+Component (0):
+  contains target 0 [proyect]
+Component (1):
+  contains target 1 [edit_cache]
+Component (2):
+  contains target 2 [rebuild_cache]
+
+The final target dependency graph is:
+target 0 is [proyect]
+target 1 is [edit_cache]
+target 2 is [rebuild_cache]
+
 -- Generating done (0.0s)
+Generate graphviz: C:/Users/cosea/CLionProjects/proyect/cmake-build-debug/graph.dot
 -- Build files have been written to: C:/Users/cosea/CLionProjects/proyect/cmake-build-debug

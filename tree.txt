@@ -1,0 +1,17 @@
+proyect/
+┣ cmake-build-debug/
+┣ modules/
+┃ ┣ CJugador.cpp
+┃ ┣ CJugador.h
+┃ ┣ CTable.cpp
+┃ ┣ CTable.h
+┃ ┣ estadisticas.cpp
+┃ ┣ estadisticas.h
+┃ ┣ Menu.cpp
+┃ ┣ Menu.h
+┃ ┣ util.cpp
+┃ ┗ util.h
+┣ CMakeLists.txt
+┗ main.cpp
+
+
