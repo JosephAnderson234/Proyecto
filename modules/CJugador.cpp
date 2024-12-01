@@ -1,5 +1,6 @@
 #include "CJugador.h"
 
+//primer constructor
 CJugador::CJugador(string name, int dificulty): nombre(name),  dificultad(dificulty) {
     switch (dificulty) {
         case 1:
@@ -13,12 +14,14 @@ CJugador::CJugador(string name, int dificulty): nombre(name),  dificultad(dificu
         break;
     }
 };
-CJugador::CJugador(string name, int turns, int dificulty): nombre(name), turnos(turns), dificultad(dificulty){}
+
+//segundo constructor
+CJugador::CJugador(string name, int turns, int dificulty):
+nombre(name), turnos(turns), dificultad(dificulty){}
 
 
 
 bool CJugador::jugar(int x, int y) {
-
 
     return tablero->jugada(x,y);
 }

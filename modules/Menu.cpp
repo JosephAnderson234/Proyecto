@@ -1,4 +1,6 @@
 #include "Menu.h"
+
+
 void Menu(){
     int option_menu;
     cout << "----------------------------------------" << endl;
@@ -8,7 +10,7 @@ void Menu(){
     cout << "|  3. Salir                            |" << endl;
     cout << "----------------------------------------" << endl;
 
-    validarEleccon(option_menu);
+    validarEleccion(option_menu);
     switch(option_menu) {
         case 1:
             Jugar();

@@ -1,5 +1,7 @@
 proyect/
 ┣ cmake-build-debug/
+┃ ┣ proyect.exe
+┃ ┗ mejoresJugador.txt
 ┣ modules/
 ┃ ┣ CJugador.cpp
 ┃ ┣ CJugador.h

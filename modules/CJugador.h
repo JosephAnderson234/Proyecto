@@ -13,7 +13,6 @@ public:
     CJugador(string name, int dificulty);
     CJugador(string name, int turns, int dificulty);
     bool jugar(int x, int y);
-    bool juegoTerminado();
     friend void guardar_estadisticas(CJugador* gamer);
     friend void jugarBuscaminas(int nivel_dificultad, string nombre_jugador);
     friend bool verificarFinDeJuego(CJugador* player);

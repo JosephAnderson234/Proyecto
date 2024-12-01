@@ -21,7 +21,7 @@ void nombreValido(string& str) {
     }
 }
 
-void validarEleccon(int& x) {
+void validarEleccion(int& x) {
     while (true) {
         string temp;
         cout <<"Seleccione una de las opciones: ";
@@ -82,8 +82,6 @@ void extraerPosiciones(string& line, int& x, int& y) {
             break;
         }
     }
-
-
 }
 
 
@@ -106,9 +104,7 @@ void validarPosicion(int& x, int& y, CTablero& table, string& aceppted) {
         }else {
             cout<<"Error: caso no valido\n"<<endl;
         }
-
     }while(true);
-
 };
 
 
@@ -119,7 +115,7 @@ void validarDificultad(string& nombre_jugador, int& nivel_input) {
         getline(cin, tempInput);
         nivel_input =tempInput.size() == 1 ? charToInt(tempInput[0]): -1;
         if(nivel_input<0 || nivel_input>3) {
-            cout << "Error: Seleccione una opcion admitida." << std::endl;
+            cout << "Error: Seleccione una opcion admitida." << endl;
         }
     }while(nivel_input < 0 || nivel_input>3);
 }

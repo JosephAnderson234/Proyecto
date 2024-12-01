@@ -82,13 +82,4 @@ void mostrarEstadisticas() {
     for (int i = 0; i < jugadores.size(); i++) {
         delete jugadores[i];
     }
-    for (int i = 0; i < facil.size(); i++) {
-        delete facil[i];
-    }
-    for (int i = 0; i < medio.size(); i++) {
-        delete medio[i];
-    }
-    for (int i = 0; i < dificil.size(); i++) {
-        delete dificil[i];
-    }
 }

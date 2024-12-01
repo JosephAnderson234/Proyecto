@@ -6,7 +6,7 @@
 void extraerPosiciones(string& line, int& x, int& y, int& tableDimension);
 void validarPosicion(int& x, int& y, CTablero& table, string& aceppted);
 void validarDificultad(string& nombre_jugador, int& nivel_input);
-void validarEleccon(int& x);
+void validarEleccion(int& x);
 void nombreValido(string& str);
 
 
