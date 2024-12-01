@@ -38,7 +38,7 @@ void mostrarMenuDificultad() {
 bool procesarAccion(CJugador* player, int& x, int& y, string& accion_buscar) {
     string accion;
     do {
-        cout << "Va a desenterrar o marcar/desmarcar (D o F): ";
+        cout << "Va a desenterrar(D o d) o marcar/desmarcar(F o f): ";
         getline(cin, accion);
     } while (accion != "D"&& accion != "d"&& accion != "f" && accion != "F");
 
@@ -72,7 +72,6 @@ bool verificarFinDeJuego(CJugador* player) {
 
 void jugarBuscaminas(int nivel_dificultad, string nombre_jugador) {
     CJugador* player = new CJugador(nombre_jugador, nivel_dificultad);
-
     do {
         int x, y;
         (*player)++;
@@ -90,7 +89,6 @@ void jugarBuscaminas(int nivel_dificultad, string nombre_jugador) {
             break;
         }
     } while (true);
-
     delete player;
 }
 
